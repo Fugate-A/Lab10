@@ -48,12 +48,12 @@ void insert(struct Trie **ppTrie, char *word)
         {
             spot = spot - 'a';
 
-            if( temp -> children[alpha] == NULL )
+            if( temp -> children[spot] == NULL )
             {
-                temp -> children[alpha] = calloc( 1, sizeof( struct Trie ) );
+                temp -> children[spot] = calloc( 1, sizeof( struct Trie ) );
             }
 
-            temp = temp -> children[alpha];
+            temp = temp -> children[spot];
         }
     }
 
@@ -80,7 +80,7 @@ int numberOfOccurances(struct Trie *pTrie, char *word)
         {
             spot = spot - 'a';
 
-            pTrie = pTrie -> children[alpha];
+            pTrie = pTrie -> children[spot];
 
             if( pTrie == NULL )
             {
